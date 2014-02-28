@@ -1,6 +1,6 @@
 import math
 
-__author__ = 'martscsn'
+__author__ = 'smartschat'
 
 
 class Score:

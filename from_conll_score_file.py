@@ -1,7 +1,7 @@
 import sys
 from scores import Score, Scores
 
-__author__ = 'martscsn'
+__author__ = 'smartschat'
 
 
 def get_numerators_and_demoniators(score_file):

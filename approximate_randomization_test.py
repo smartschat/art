@@ -3,7 +3,7 @@ import sys
 import math
 from scores import Score, Scores
 
-__author__ = 'martscsn'
+__author__ = 'smartschat'
 
 
 def get_scores(system_file):
