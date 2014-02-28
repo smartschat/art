@@ -4,7 +4,7 @@ from scores import Score, Scores
 __author__ = 'smartschat'
 
 
-def get_numerators_and_demoniators(score_file):
+def get_numerators_and_denominators(score_file):
     scores = Scores()
 
     for line in score_file.readlines():
@@ -23,5 +23,5 @@ def get_numerators_and_demoniators(score_file):
 
 
 if __name__ == "__main__":
-    scores = get_numerators_and_demoniators(open(sys.argv[1]))
+    scores = get_numerators_and_denominators(open(sys.argv[1]))
     print(scores)
