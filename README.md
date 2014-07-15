@@ -22,7 +22,7 @@ We then aggregate the above values over the whole corpus to compute recall and p
 
 Hence, we assume that the input files contain in the i-th line contains
 
-numerator_recall, denominator_recall, numerator_precision, denominator_precision
+numerator_recall denominator_recall numerator_precision denominator_precision
 
 for the i-th document in the corpus.
 
