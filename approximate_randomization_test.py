@@ -12,7 +12,7 @@ class ApproximateRandomizationTest:
         self.aggregator = aggregator
         self.trials = trials
 
-    def run_test(self):
+    def run(self):
         absolute_difference = math.fabs(self.aggregator(self.system1_scores) - self.aggregator(self.system2_scores))
         shuffled_was_at_least_as_high = 0
 
