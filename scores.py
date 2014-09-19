@@ -1,5 +1,3 @@
-import math
-
 __author__ = 'smartschat'
 
 
@@ -10,10 +8,31 @@ class Score:
     def __str__(self):
         return " ".join([str(val) for val in self.values])
 
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.values == other.values
+        else:
+            return False
+
+    def __hash__(self):
+        return hash(self.values)
+
 
 class Scores:
-    def __init__(self):
-        self.scores = []
+    def __init__(self, scores):
+        self.scores = scores
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.scores == other.scores
+        else:
+            return False
+
+    def __hash__(self):
+        return hash(self.scores)
+
+    def __len__(self):
+        return len(self.scores)
 
     def __iter__(self):
         return iter(self.scores)
@@ -21,12 +40,12 @@ class Scores:
     def append(self, score):
         self.scores.append(score)
 
-    def get_f1(self):
-        recall = math.fsum(score.values[0] for score in self.scores)/math.fsum(score.values[1] for score in self.scores)
-        precision = math.fsum(score.values[2] for score in self.scores)/math.fsum(score.values[3] for score in self.scores)
-        f1 = 2*recall*precision/(recall+precision)
-
-        return f1
+    @staticmethod
+    def from_file(file):
+        scores = []
+        for line in file.readlines():
+            scores.append(Score(line.split()))
+        return Scores(scores)
 
     def __str__(self):
         return "\n".join([str(score) for score in self.scores])
