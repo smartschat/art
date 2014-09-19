@@ -40,7 +40,7 @@ This repository also contains a script to create the required input from the out
 
 Usage is
 
-$ python3 from_conll_score_file.py conll_score_file
+$ python from_conll_score_file.py conll_score_file
 
 Here conll_score_file should have been created by using the official CoNLL scorer, e.g.
 
