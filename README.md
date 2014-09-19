@@ -1,7 +1,7 @@
 # Approximate Randomization Testing
 
 
-This repository contains a package that allows to perform approximate randomization tests to assess the statistical significance of the difference in performance between two systems.
+This repository contains a package that allows to perform two-sided paired approximate randomization tests to assess the statistical significance of the difference in performance between two systems.
 
 ## Usage
 
