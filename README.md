@@ -1,11 +1,9 @@
-Approximate Randomization Testing
-======
+# Approximate Randomization Testing
 
 
 This repository contains a package that allows to perform approximate randomization tests to assess the statistical significance of the difference in performance between two systems.
 
-Usage
------
+## Usage
 
 You need to create an ApproximateRandomizationTest object to perform the test. Here is an example:
 
@@ -17,29 +15,35 @@ test = art.ApproximateRandomizationTest(open('system1_file'), open('system2_file
 test.run()
 ```
 
-Already implemented aggregation functions are average, recall, precision, and F1 score. Just have a look at `aggregators.py`
+## Input Format
 
-Input Format
-------------
-
-We assume that we want to check the statistical significance of the difference in score between two systems S and T on the same corpus C. To compute the score over the whole corpus, we compute for each document:
-
-```
-score_1, score_2, ..., score_n
-```
-
-We then aggregate the above values over the whole corpus to compute an aggregated score. This can be for example the average (then n = 1) or the F1 score (then n = 4).
+We assume that we want to check the statistical significance of the difference in score between two systems S and T on the same corpus C. To compute the score over the whole corpus, we compute for each document all scores needed to compute the final score, and then aggregate the above values over the whole corpus to compute an aggregated score. 
 
 Hence, we assume that the input files contain in the i-th line
 
 ```
-score_1, score_2, ..., score_n
+score_1 score_2 ... score_n
 ```
 
-for the i-th document in the corpus.
+for the i-th document in the corpus. That is, a list of numbers divided by one space.
 
-Converting CoNLL Coreference Score Files
-----------------------------------------
+## Examples
+
+So far, three aggregation functions are implemented: average, dividing sums (suitable for precision and recall) and F1 score. All these are implemented in `aggregators.py`. We now briefly describe each such function and the expected input format.
+
+### Average
+
+Aggregation function `average`. Expected input is a list of one number per line. The function just computes the average of all the numbers.
+
+### Dividing sums
+
+Aggregations function `enum_sum_div_by_denom_sum`. Expected input is a list of two numbers per line. The first number is interpreted as the enumerator, the second number as the demoninator. The aggregated score is computed by summing over each and then dividing. One use-case of this aggregation function is to compute recall or precision.
+
+### F1
+
+Aggregations function `f1`. Expected input is a list of four numbers per line. The first two numbers are interpreted as enumerator and denominator for recall, the third and fourth number accordingly for precision. The aggregated score is aggregating recall and precision individually, by dividing sums, and then computing the F1 score.
+
+## Converting CoNLL Coreference Score Files
 
 This repository also contains a script to create the required input from the output of the CoNLL coreference scorer (http://code.google.com/p/reference-coreference-scorers/).
 
