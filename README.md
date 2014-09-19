@@ -25,23 +25,23 @@ Hence, we assume that the input files contain in the i-th line
 score_1 score_2 ... score_n
 ```
 
-for the i-th document in the corpus. That is, a list of numbers divided by one space.
+for the i-th document in the corpus. That is, a list of numbers divided by space.
 
 ## Examples
 
-So far, three aggregation functions are implemented: average, dividing sums (suitable for precision and recall) and F1 score. All these are implemented in `aggregators.py`. We now briefly describe each such function and the expected input format.
+So far, three aggregation functions are implemented: average, dividing sums (suitable for precision and recall) and F1 score. All these are implemented in `aggregators.py`. We now briefly describe each such function and the expected input format for the `ApproximateRandomizationTest` object.
 
 ### Average
 
-Aggregation function `average`. Expected input is a list of one number per line. The function just computes the average of all the numbers.
+Aggregation function `average`. Expected input is a file containing one number per line. The function just computes the average of all the numbers.
 
 ### Dividing sums
 
-Aggregations function `enum_sum_div_by_denom_sum`. Expected input is a list of two numbers per line. The first number is interpreted as the enumerator, the second number as the demoninator. The aggregated score is computed by summing over each and then dividing. One use-case of this aggregation function is to compute recall or precision.
+Aggregations function `enum_sum_div_by_denom_sum`. Expected input is a file containing two numbers per line. The first number is interpreted as the enumerator, the second number as the demoninator. The aggregated score is computed by summing over each and then dividing. One use-case of this aggregation function is to compute recall or precision.
 
 ### F1
 
-Aggregations function `f1`. Expected input is a list of four numbers per line. The first two numbers are interpreted as enumerator and denominator for recall, the third and fourth number accordingly for precision. The aggregated score is aggregating recall and precision individually, by dividing sums, and then computing the F1 score.
+Aggregations function `f1`. Expected input is a file containing four numbers per line. The first two numbers are interpreted as enumerator and denominator for recall, the third and fourth number accordingly for precision. The aggregated score is aggregating recall and precision individually, by dividing sums, and then computing the F1 score.
 
 ## Converting CoNLL Coreference Score Files
 
