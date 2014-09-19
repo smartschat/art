@@ -59,4 +59,4 @@ Here conll_score_file should have been created by using the official CoNLL score
 $ perl scorer.pl muc key response > conll_score_file
 ```
 
-The script prints the extracted values for recall and precision to standard output.
+The script prints the extracted values for recall and precision to standard output (sutiable for testing of differences in F1 score)
