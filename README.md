@@ -1,28 +1,35 @@
-Approximate Randomization Testing for F1
+Approximate Randomization Testing
 ======
 
 
-This repository contains a simple script that performs an approximate randomization test to assess the statistical significance of the difference in F1 score between two systems.
+This repository contains a package that allows to perform approximate randomization tests to assess the statistical significance of the difference in performance between two systems.
 
 Usage
 -----
 
-$ python3 approximate_randomization.py system1_file system2_file
+You need to create an ApproximateRandomizationTest object to perform the test. Here is an example:
 
-The script then prints the p-value to standard output.
+```
+import approximate_randomization_test as art
+import aggregators
+
+test = art(open('system1_file'), open('system2_file'), aggregators.f1)
+test.run()
+```
+
 
 Input Format
 ------------
 
-We assume that we want to check the statistical significance of the difference in F1 score between two systems S and T on the same corpus C. To compute the F1 score over the whole corpus, we compute for each document:
+We assume that we want to check the statistical significance of the difference in score between two systems S and T on the same corpus C. To compute the score over the whole corpus, we compute for each document:
 
-numerator_recall, denominator_recall, numerator_precision, denominator_precision
+score_1, score_2, ..., score_n
 
-We then aggregate the above values over the whole corpus to compute recall and precision. From this we can compute the F1 score.
+We then aggregate the above values over the whole corpus to compute an aggregated score. This can be for example the average (then n = 1) or the F1 score (then n = 4).
 
-Hence, we assume that the input files contain in the i-th line contains
+Hence, we assume that the input files contain in the i-th line
 
-numerator_recall denominator_recall numerator_precision denominator_precision
+score_1, score_2, ..., score_n
 
 for the i-th document in the corpus.
 
