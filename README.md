@@ -13,7 +13,7 @@ You need to create an ApproximateRandomizationTest object to perform the test. H
 import approximate_randomization_test as art
 import aggregators
 
-test = art(open('system1_file'), open('system2_file'), aggregators.f1)
+test = art.ApproximateRandomizationTest(open('system1_file'), open('system2_file'), aggregators.f1)
 test.run()
 ```
 
