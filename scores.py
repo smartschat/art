@@ -19,7 +19,7 @@ class Score:
 
 
 class Scores:
-    def __init__(self, scores):
+    def __init__(self, scores=[]):
         self.scores = scores
 
     def __eq__(self, other):
