@@ -17,8 +17,8 @@ class ApproximateRandomizationTest:
         shuffled_was_at_least_as_high = 0
 
         for i in range(0, self.trials):
-            pseudo_system1_scores = Scores()
-            pseudo_system2_scores = Scores()
+            pseudo_system1_scores = Scores([])
+            pseudo_system2_scores = Scores([])
 
             for score1, score2 in zip(self.system1_scores, self.system2_scores):
                 if random.randint(0, 1) == 0:
