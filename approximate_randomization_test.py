@@ -7,8 +7,8 @@ __author__ = 'smartschat'
 
 class ApproximateRandomizationTest:
     def __init__(self, system1_file, system2_file, aggregator, trials=1000):
-        self.system1_scores = Scores(system1_file)
-        self.system2_scores = Scores(system2_file)
+        self.system1_scores = Scores.from_file(system1_file)
+        self.system2_scores = Scores.from_file(system2_file)
         self.aggregator = aggregator
         self.trials = trials
 
