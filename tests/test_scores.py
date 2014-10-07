@@ -1,3 +1,4 @@
+import os
 from scores import Scores, Score
 
 __author__ = 'martscsn'
@@ -15,7 +16,9 @@ class TestScores(unittest.TestCase):
                 Score([3.1, 4.355]),
             ]
         )
-        self.assertEqual(expected_scores, Scores.from_file(open("resources/example_scores")))
+        self.assertEqual(expected_scores, Scores.from_file(open(
+            os.path.dirname(os.path.realpath(__file__)) +
+        "/resources/example_scores")))
 
 
 if __name__ == '__main__':
