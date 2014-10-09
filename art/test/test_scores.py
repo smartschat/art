@@ -4,7 +4,7 @@ import unittest
 from art.scores import Score
 from art.scores import Scores
 
-__author__ = 'martscsn'
+__author__ = 'smartschat'
 
 
 class TestScores(unittest.TestCase):
