@@ -19,7 +19,7 @@ class Score(object):
         self.values = [float(val) for val in score]
 
     def __str__(self):
-        return " ".join([str(val) for val in self.values])
+        return ' '.join([str(val) for val in self.values])
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -64,7 +64,7 @@ class Scores(object):
         return iter(self.scores)
 
     def __str__(self):
-        return "\n".join([str(score) for score in self.scores])
+        return '\n'.join([str(score) for score in self.scores])
 
     def append(self, score):
         """Append a score.

@@ -89,10 +89,10 @@ from art import significance_tests
 from art import transform_conll_score_file as transform
 
 
-transformed_system1 = transform.get_numerators_and_denominators(open
-("conll_score_file"))
-transformed_system2 = transform.get_numerators_and_denominators(open
-("another_conll_score_file"))
+transformed_system1 = transform.get_numerators_and_denominators(
+                        open('conll_score_file'))
+transformed_system2 = transform.get_numerators_and_denominators(
+                        open('another_conll_score_file'))
 
 test = significance_tests.ApproximateRandomizationTest(
     scores.Scores(transformed_system1), 

@@ -28,9 +28,9 @@ def get_numerators_and_denominators(score_file):
     scores_from_file = Scores()
 
     for line in score_file.readlines():
-        if line == "====== TOTALS =======":
+        if line == '====== TOTALS =======':
             break
-        elif line.startswith("Recall:"):
+        elif line.startswith('Recall:'):
             entries = line.split()
             recall_numerator = entries[1].replace("(", "")
             recall_denominator = entries[3].replace(")", "")
