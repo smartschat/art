@@ -1,3 +1,5 @@
+"""Transform CoNLL scorer files into a suitable format."""
+
 import sys
 
 from art.scores import Score
@@ -7,6 +9,22 @@ __author__ = 'smartschat'
 
 
 def get_numerators_and_denominators(score_file):
+    """Transform score files obtained by the CoNLL scorer.
+
+    This function transforms files obtained by the reference coreference
+    scorer (https://code.google.com/p/reference-coreference-scorers/) into
+    a format suitable for performing significance testing for differences in
+    F1 score.
+
+    Args
+        score_file: A file obtained via running the reference coreference
+                    scorer for a single metric, as in
+                     $ perl scorer.pl muc key response > conll_score_file
+
+    Returns
+        A Scores objects containing numerator/denominator for recall and
+        precision for each document described in the score file.
+    """
     scores_from_file = Scores()
 
     for line in score_file.readlines():
