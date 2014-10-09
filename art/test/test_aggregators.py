@@ -1,5 +1,5 @@
-import aggregators
-from scores import Scores, Score
+from art.scores import Scores, Score
+from art import aggregators
 
 __author__ = 'smartschat'
 

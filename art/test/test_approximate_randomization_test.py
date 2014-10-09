@@ -1,6 +1,8 @@
 import os
-import aggregators
+
 from approximate_randomization_test import ApproximateRandomizationTest
+from art import aggregators
+
 
 __author__ = 'smartschat'
 

@@ -1,7 +1,9 @@
 from __future__ import division
 import random
 import math
-from scores import Scores
+
+from art.scores import Scores
+
 
 __author__ = 'smartschat'
 

@@ -1,5 +1,7 @@
 import os
-from scores import Scores, Score
+
+from art.scores import Scores, Score
+
 
 __author__ = 'martscsn'
 
