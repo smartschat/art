@@ -37,7 +37,7 @@ class Scores(object):
     Attributes:
         scores: A list of Score objects.
     """
-    def __init__(self, scores):
+    def __init__(self, scores=None):
         """Init from a list of scores.
 
         Args:
