@@ -4,7 +4,6 @@ import random
 
 from art.scores import Scores
 
-
 __author__ = 'smartschat'
 
 

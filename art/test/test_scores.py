@@ -1,11 +1,10 @@
 import os
+import unittest
 
-from art.scores import Scores, Score
-
+from art.scores import Score
+from art.scores import Scores
 
 __author__ = 'martscsn'
-
-import unittest
 
 
 class TestScores(unittest.TestCase):

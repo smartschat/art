@@ -1,9 +1,12 @@
-from art.scores import Scores, Score
+import unittest
+
 from art import aggregators
+from art.scores import Score
+from art.scores import Scores
 
 __author__ = 'smartschat'
 
-import unittest
+
 
 
 class TestAggregators(unittest.TestCase):

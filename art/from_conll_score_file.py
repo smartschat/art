@@ -1,7 +1,7 @@
 import sys
 
-from art.scores import Score, Scores
-
+from art.scores import Score
+from art.scores import Scores
 
 __author__ = 'smartschat'
 
