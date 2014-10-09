@@ -27,7 +27,11 @@ class ApproximateRandomizationTest(object):
                         corpus.
         trials: The number of iterations during the test.
     """
-    def __init__(self, system1_file, system2_file, aggregator, trials=10000):
+    def __init__(self,
+                 system1_scores,
+                 system2_scores,
+                 aggregator,
+                 trials=10000):
         """Inits a paired two-sided approximate randomization test.
 
         Args:
@@ -41,8 +45,8 @@ class ApproximateRandomizationTest(object):
             trials: The number of iterations during the test. Defaults to
                             10000.
         """
-        self.system1_scores = Scores.from_file(system1_file)
-        self.system2_scores = Scores.from_file(system2_file)
+        self.system1_scores = system1_scores
+        self.system2_scores = system2_scores
         self.aggregator = aggregator
         self.trials = trials
 
