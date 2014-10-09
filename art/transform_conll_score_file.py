@@ -1,7 +1,5 @@
 """Transform CoNLL scorer files into a suitable format."""
 
-import sys
-
 from art.scores import Score
 from art.scores import Scores
 
