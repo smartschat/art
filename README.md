@@ -9,7 +9,7 @@ difference in performance between two systems.
 You need to create an ApproximateRandomizationTest object to perform the test.
 Here is an example:
 
-```
+```python
 from art import aggregators
 from art import scores
 from art import significance_tests
@@ -82,7 +82,7 @@ $ perl scorer.pl muc key response > conll_score_file
 Then employ `get_numerators_and_denominators` from `transform_conll_score` to
 transform the file into an object which can be used for scoring:
 
-```
+```python
 from art import aggregators
 from art import scores
 from art import significance_tests
