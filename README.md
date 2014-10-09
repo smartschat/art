@@ -18,7 +18,7 @@ from art import significance_tests
 test = significance_tests.ApproximateRandomizationTest(
     scores.Scores.from_file(open('system1_file')), 
     scores.Scores.from_file(open('system2_file')), 
-    aggregators.f1)
+    aggregators.f_1)
 test.run()
 ```
 
@@ -61,7 +61,7 @@ aggregation function is to compute recall or precision.
 
 ### F1
 
-Aggregations function `f1`. Expected input is a file containing four numbers 
+Aggregations function `f_1`. Expected input is a file containing four numbers 
 per line. The first two numbers are interpreted as enumerator and denominator
 for recall, the third and fourth number accordingly for precision. The 
 aggregated score is aggregating recall and precision individually, by dividing 
@@ -97,6 +97,6 @@ transformed_system2 = transform.get_numerators_and_denominators(
 test = significance_tests.ApproximateRandomizationTest(
     scores.Scores(transformed_system1), 
     scores.Scores(transformed_system2), 
-    aggregators.f1)
+    aggregators.f_1)
 test.run()
 ```

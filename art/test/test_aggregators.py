@@ -32,8 +32,8 @@ class TestAggregators(unittest.TestCase):
                          aggregators.enum_sum_div_by_denom_sum(
                              scores_for_enum_sum_div_by_denom_sum))
 
-    def test_f1(self):
-        scores_for_f1 = Scores(
+    def test_f_1(self):
+        scores_for_f_1 = Scores(
             [
                 Score([2, 3, 7, 8]),
                 Score([4, 12, 33, 50]),
@@ -44,9 +44,9 @@ class TestAggregators(unittest.TestCase):
 
         recall = 31.1 / 519.355
         precision = 53.3 / 75.9
-        f1 = 2 * recall * precision / (recall + precision)
+        f_1 = 2 * recall * precision / (recall + precision)
 
-        self.assertEqual(f1, aggregators.f1(scores_for_f1))
+        self.assertEqual(f_1, aggregators.f_1(scores_for_f_1))
 
 if __name__ == '__main__':
     unittest.main()

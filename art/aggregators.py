@@ -34,7 +34,7 @@ def enum_sum_div_by_denom_sum(scores):
         [score.values[1] for score in scores])
 
 
-def f1(scores):
+def f_1(scores):
     """Compute the corpus-wide F1 score represented by the scores.
 
     Each score should contain four entries. Consider:
