@@ -1,6 +1,6 @@
 from __future__ import division
-import random
 import math
+import random
 
 from art.scores import Scores
 
