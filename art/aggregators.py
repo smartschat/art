@@ -1,3 +1,11 @@
+"""Contains functions to aggregate scores over a corpus.
+
+Thie module contains the following functions:
+    - average: computes average of scores
+    - enum_sum_div_by_denom_sum: sums each dimension of score and then divide
+    - f1: compute corpus-wide f1 score
+"""
+
 import math
 
 __author__ = 'smartschat'

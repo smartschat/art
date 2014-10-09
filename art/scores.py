@@ -1,3 +1,5 @@
+""" Contains classes fore managing scores and lists of scores."""
+
 __author__ = 'smartschat'
 
 

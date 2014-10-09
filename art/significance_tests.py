@@ -1,3 +1,5 @@
+"""Contains significance tests for differences between systems."""
+
 from __future__ import division
 import math
 import random
