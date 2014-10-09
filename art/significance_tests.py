@@ -8,7 +8,7 @@ from art.scores import Scores
 __author__ = 'smartschat'
 
 
-class ApproximateRandomizationTest:
+class ApproximateRandomizationTest(object):
     def __init__(self, system1_file, system2_file, aggregator, trials=1000):
         self.system1_scores = Scores.from_file(system1_file)
         self.system2_scores = Scores.from_file(system2_file)

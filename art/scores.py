@@ -1,7 +1,7 @@
 __author__ = 'smartschat'
 
 
-class Score:
+class Score(object):
     def __init__(self, score):
         self.values = [float(val) for val in score]
 
@@ -18,7 +18,7 @@ class Score:
         return hash(self.values)
 
 
-class Scores:
+class Scores(object):
     def __init__(self, scores):
         self.scores = scores
 
