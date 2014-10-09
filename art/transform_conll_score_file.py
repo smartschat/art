@@ -46,8 +46,3 @@ def get_numerators_and_denominators(score_file):
             )
 
     return scores_from_file
-
-
-if __name__ == "__main__":
-    conll_scores = get_numerators_and_denominators(open(sys.argv[1]))
-    print(conll_scores)
