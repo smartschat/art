@@ -7,8 +7,6 @@ from art.scores import Scores
 __author__ = 'smartschat'
 
 
-
-
 class TestAggregators(unittest.TestCase):
     def test_average(self):
         scores_for_average = Scores(
