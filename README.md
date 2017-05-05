@@ -100,3 +100,8 @@ test = significance_tests.ApproximateRandomizationTest(
     aggregators.f_1)
 test.run()
 ```
+
+## Changelog
+
+__05 May 2017__
+Fixed a bug in transforming CoNLL coreference score files.

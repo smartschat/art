@@ -25,9 +25,13 @@ def get_numerators_and_denominators(score_file):
     """
     scores_from_file = Scores()
 
+    temp_mapping = {}
+
     for line in score_file.readlines():
         if line == '====== TOTALS =======':
             break
+        elif line.startswith("("):
+            identifier = line.strip()
         elif line.startswith('Recall:'):
             entries = line.split()
             recall_numerator = entries[1].replace("(", "")
@@ -35,12 +39,18 @@ def get_numerators_and_denominators(score_file):
             precision_numerator = entries[6].replace("(", "")
             precision_denominator = entries[8].replace(")", "")
 
-            scores_from_file.append(
-                Score([
+            temp_mapping[identifier] = [
                     recall_numerator,
                     recall_denominator,
                     precision_numerator,
-                    precision_denominator])
-            )
+                    precision_denominator
+            ]
+
+            identifier = None
+
+    for identifier in sorted(temp_mapping.keys()):        
+        scores_from_file.append(
+            Score(temp_mapping[identifier])
+        )
 
     return scores_from_file
