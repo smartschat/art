@@ -103,5 +103,5 @@ test.run()
 
 ## Changelog
 
-__05 May 2017__
+__05 May 2017__  
 Fixed a bug in transforming CoNLL coreference score files.
